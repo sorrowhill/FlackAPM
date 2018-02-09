@@ -17,8 +17,6 @@ def background_task():
     while True:
         value = random.randrange(1, 100000)
         if value <= 50:
-            value_dict = {'value': value}
-            newrelic.agent.record_custom_event("my_event", value_dict)
             break
 
     Timer(1, background_task).start()
